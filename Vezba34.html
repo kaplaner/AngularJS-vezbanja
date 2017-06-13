@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body ng-app="">
+	<form>
+		<select ng-model=someThing>
+			<option value="cpu">CPU</option>
+			<option value="memory">Memory</option>
+			<option value="display">Display</option>
+			<option value="keyboard">Keyboard</option>
+			<option value="mouse">Mouse</option>
+		</select>
+	</form>
+	<div ng-switch="someThing">
+		<div ng-switch-when="cpu">
+			<h2>CPU</h2>
+			<p>Something about CPU</p>
+		</div>
+		<div ng-switch-when="memory">
+			<h2>Memory</h2>
+			<p>Something about memory</p>
+		</div>
+		<div ng-switch-when="display">
+			<h2>Display</h2>
+			<p>Something about display</p>
+		</div>
+		<div ng-switch-when="keyboard">
+			<h2>Keyboard</h2>
+			<p>Something about keyboard</p>
+		</div>
+		<div ng-switch-when="mouse">
+			<h2>Mouse</h2>
+			<p>Something about mouse</p>
+		</div>
+		<div ng-switch-default="default">
+			<h2>Default</h2>
+			<p>This is Invalid</p>
+
+		</div>
+	</div>
+</body>
+</html>

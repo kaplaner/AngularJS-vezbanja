@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="someApp" ng-controller="someCtrl"> 
+<p>{{x}}</p>
+<p>{{y}}</p>
+<p>{{z}}</p>
+<p>{{f}}</p>
+<p>{{m}}</p>
+<p>{{g}}</p>
+<p>{{k}}</p>
+<p>{{j}}</p>
+<p>{{n}}</p>
+</div>
+
+<script>
+	var app = angular.module('someApp',[]);
+	app.controller('someCtrl', function($scope) {
+		$scope.x = "Marko Markov";
+		$scope.y = angular.uppercase($scope.x);
+		$scope.z = angular.isString($scope.x);
+		$scope.f = angular.isNumber($scope.x);
+		$scope.m = angular.isObject($scope.x);
+		$scope.g = angular.isArray($scope.x);
+		$scope.k = angular.isFunction($scope.x);
+		$scope.j = angular.toJson($scope.x);
+	});
+</script>
+</body>
+</html>

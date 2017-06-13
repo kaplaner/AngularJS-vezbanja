@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body>
+<div ng-app="someApp" ng-controller="namesCtrl">
+	<ul>
+		<li ng-repeat="x in names | orderBy: 'lastName'">
+			{{ x.firstName + ', ' + x.lastName + ', ' + x.serialnumber + ' ' + x.country }}
+		</li>
+	</ul>
+</div>
+
+<script>
+	angular.module('someApp', []).controller('namesCtrl', function($scope) {
+		$scope.names = [
+			{firstName:'Milan',lastName:'Milinkovic',serialNumber:234,country:'Serbia'},
+			{firstName:'Dominik',lastName:'Pratt',serialNumber:220,country:'Germany'},
+			{firstName:'GianLuca',lastName:'Lorenzzi',serialNumber:657,country:'Italy'},
+			{firstName:'Miroslav',lastName:'Lager',serialNumber:116,country:'Slovakia'},
+			{firstName:'Jan',lastName:'Picard',serialNumber:884,country:'France'},
+			{firstName:'Mihail',lastName:'Ostrov',serialNumber:143,country:'Russia'},
+			{firstName:'Gokan',lastName:'Ferige',serialNumber:987,country:'Turkey'},
+			{firstName:'Stipe',lastName:'Markov',serialNumber:245,country:'Croatia'}
+		];
+	});
+</script>
+</body>
+</html>

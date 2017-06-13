@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body>
+<div ng-app="" ng-init="devices='Computers';manufacturer='Mac';quantity=10;price=100">
+
+Product: <input type="text" ng-model="devices"><br><br>
+Producer: <input type="text" ng-model="manufacturer">
+<p><b>About product:</b> {{ devices + ' ' + manufacturer }}</p>
+
+Quantity: <input type="number" ng-model="quantity"><br><br>
+Price: <input type="number" ng-model="price">
+<p><b>Total in dollar:</b> {{ quantity * price }} </p>
+
+</div>
+</body>
+</html>

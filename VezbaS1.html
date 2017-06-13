@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+</head>
+<body ng-App="Table">
+
+	<div ng-controller="tableCtrl">
+		<table>
+				<tr>
+					<th>First Name:</th>
+					<th>Last Name:</th>
+					<th>Age:</th>
+					<th>Gender:</th>
+				</tr>
+				<tr ng-repeat="x in lists">
+					<td>{{x.firstName}}</td>
+					<td>{{x.lastName}}</td>
+					<td>{{x.age}}</td>
+					<td>{{x.gender}}</td>
+				</tr>
+		</table>
+	</div>
+
+	<script>
+		var app = angular.module('Table', []);
+		app.controller('tableCtrl', function($scope, $http) {
+			$http.get("lists.html")
+			.then(function(response) {$scope.lists =
+				response.data.records;});
+		});
+	</script>
+</body>
+</html>

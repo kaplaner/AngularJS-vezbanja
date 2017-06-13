@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+
+	<style>
+		button {
+			background-color: red;
+			display: inline-block;
+			margin: 10px;
+
+		}
+		button a {
+			font-size: 18px;
+			color: white;
+			text-decoration: none;
+
+		}
+	</style>
+</head>
+<body ng-app="someApp">
+	<button><a href="london.html">London</button>
+	<button><a href="paris.html">Paris</button>
+	<button><a href="tokio.html">Tokio</button>
+	
+	<div ng-view></div>
+
+	<script>
+		var app = angular.module('someApp', ["ngRoute"]);
+		app.config (function($routeProvider) {
+			$routeProvider
+			.when("/london", {
+				templateUrl : "london.html"
+			})
+			.when("/paris", {
+				templateUrl : "paris.html"
+			})
+			.when("/tokio", {
+				templateUrl : "tokio.html"
+			});
+		});
+	</script>
+</body>
+</html>

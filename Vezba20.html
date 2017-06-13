@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="littleTest" ng-controller="myCtrl">
+	<select ng-model="selectedProduct" ng-options="x.CPU for x in products"></select>
+
+	<p>{{selectedProduct.name}}</p>
+	<p>{{selectedProduct.model}}</p>
+	<p>{{selectedProduct.CPU}}</p>
+</div>
+
+<script>
+	var app = angular.module('littleTest', []);
+	app.controller('myCtrl', function($scope) {
+		$scope.products = [
+			{name: "Mac", model: "MacBook Air", CPU: "i5"},
+			{name: "Acer", model: "50-70", CPU: "i3"},
+			{name:"Lenovo", model:"light", CPU:"i7"}
+		];
+	});
+</script>
+</body>
+</html>

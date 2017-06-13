@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body>
+<div ng-app="" ng-init="employee=[
+{firstName: 'Milan', lastName: 'Markovic', id: 987,activeService: '2 years'},
+{firstName: 'Dejan', lastName: 'Sestic', id: 789, activeService: '3 years'},
+{firstName: 'Lazar', lastName: 'Nikic', id: 345, activeService: '4 years'},
+{firstName: 'Marko', lastName: 'Zvizdic', id: 534, activeService: '5 years'},
+{firstName: 'Milos', lastName: 'Ivkov', id: 673, activeService: '6 years'}]">
+<p><b>Employee: First Name, Last Name, ID, Active Service</b></p>
+	<ul>
+		<li ng-repeat="y in employee"> {{ y.firstName + ', ' + y.lastName + ', ' + y.id + ', ' + y.activeService }} </li>
+	</ul>
+</div>
+</body>
+</html>

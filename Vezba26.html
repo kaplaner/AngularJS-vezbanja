@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+		div {
+			width: 100px;
+			height: 100px;
+			background-color: green;
+			transition: height 2s linear 1s;
+		}
+		div:hover {
+			width: 400px;
+		}
+</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.js"></script>
+</head>
+<body ng-app="someApp">
+<p>Some text:<input type="checkbox" ng-model="myCheck"></p>
+	<div ng-show="myCheck"></div>
+	<script>
+		var app = angular.module('someApp', ['ngAnimate']);
+	</script>
+</body>
+</html>

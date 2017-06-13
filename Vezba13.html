@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body>
+<div ng-app="myDestinations" ng-controller="myCtrl">
+	Destination: <input ng-model="name">
+	<h2>I write: {{name}}</h2>
+</div>
+
+<script>
+	var app = angular.module('myDestinations', []);
+	app.controller('myCtrl', function($scope) {
+		$scope.name = "Budimpesta";
+	});
+</script>
+</body>
+</html>

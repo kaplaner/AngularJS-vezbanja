@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body>
+<div ng-app="someApp" ng-controller="namesCtrl">
+	<p><b>Type a letter:</b></p>
+	<p><input type="text" ng-model="test"></p>
+
+	<ul>
+		<li ng-repeat="y in names | filter:test">
+			{{y}}
+		</li>
+	</ul>
+</div>
+
+<script>
+	angular.module('someApp', []).controller('namesCtrl', function($scope){
+		$scope.names = [
+		'Marko',
+		'Janko',
+		'Danre',
+		'Igor',
+		'Ranko',
+		'Dejan',
+		'Nemanja',
+		'Andrija'];
+	});
+</script>
+</body>
+</html>

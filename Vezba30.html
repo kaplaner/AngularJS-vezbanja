@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="someApp" ng-controller="productCtrl">
+	<p>Quantity: {{ product.quantity }}</p>
+	<p>Cost: {{ product.cost }}</p>
+	<h2>Addition: {{ addition() }}</h2>
+	<h2>Substraction: {{ substraction() }}</h2>
+	<h2>Multiplication: {{ multiplication() }}</h2>
+	<h2>Division: {{ division() }}</h2>
+
+</div>
+
+<script>
+	var app = angular.module('someApp', []);
+	app.controller('productCtrl', function($scope) {
+		$scope.product = {
+			quantity: 76,
+			cost: 89,
+		};
+		$scope.addition= function () {
+			var total = $scope.product;
+			return total.quantity + total.cost;
+		};
+		$scope.substraction = function () {
+			var total = $scope.product;
+			return total.quantity - total.cost;
+		};
+		$scope.multiplication = function () {
+			var total = $scope.product;
+			return total.quantity * total.cost;
+		};
+		$scope.division = function () {
+			var total = $scope.product;
+			return total.quantity / total.cost;
+		};
+	});
+</script>
+</body>
+</html>
